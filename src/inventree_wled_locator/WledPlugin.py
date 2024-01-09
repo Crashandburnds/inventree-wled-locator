@@ -192,8 +192,8 @@ class WledPlugin(UrlsMixin, LocateMixin, SettingsMixin, InvenTreePlugin):
     def _set_led(self, target_led: int = None):
         """Turn on a specific LED."""
         base_url = f'http://{self.get_setting("ADDRESS")}/json/state'
-        color_black = "000000"
-        color_marked = "FF0000"
+        color_black = "[0,0,0]"
+        color_marked = "[255,0,0]"
 
         # Turn off all segments
         requests.post(
